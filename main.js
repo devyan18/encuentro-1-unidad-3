@@ -1,41 +1,84 @@
-// tipos datos
+// arrays
 
-let myString = "hola mundo";
-let myString2 = "hola mundo"; // puede ser con comillas simples
-let myString3 = `
-hola mundo
-asdasd
-asdasd
-asdasda
-sda
-sdasda
-sdas
-`;
+const alumnosDeLaComision = [
+  "Lucas Arenas",
+  "Pablo Mariasch",
+  "Federico Tortolero",
+  "Matias Ortiz",
+  "Alfredo Oscar",
+  "Hugo Giovanetti",
+  12,
+  53,
+  32,
+  21,
+  23,
+  true,
+  false,
+  Symbol(),
+  undefined,
+  null,
+];
 
-console.log(typeof myString);
+console.log(alumnosDeLaComision[16]);
 
-let myNumber = 127263489576238947562938746587;
-let myBigInt = 127263489576238947562938746587n;
+alumnosDeLaComision.push("Alfredo Oscar");
 
-console.log(typeof myNumber);
-console.log(typeof myBigInt);
+console.log(alumnosDeLaComision[16]);
 
-let myUndefined = undefined;
+alumnosDeLaComision.pop();
 
-console.log(typeof myUndefined);
+console.log(alumnosDeLaComision[16]);
 
-let myNull = null;
+// objects
 
-console.log("null");
+let alumno = {
+  nombre: "Dario",
+  apellido: "Legue",
+  edad: 25,
+  casado: true,
+  "fecha-de-nacimiento": "17/09/1990",
+};
 
-let mySymbol = Symbol();
+function restarIVA(salario) {
+  salario = salario * 0.79;
+  return salario;
+}
 
-console.log(typeof mySymbol);
+let miSueldo = restarIVA(100);
+let miSueldo2 = restarIVA(1000);
 
-let myBoolean = false;
+console.log(miSueldo);
+console.log(miSueldo2);
 
-console.log(typeof myBoolean);
+var miVariable = "chau";
 
-myBoolean = true;
+function miFuncion() {
+  var miVariable = "hola";
+}
 
-console.log(typeof myBoolean);
+console.log(miVariable);
+
+miFuncion();
+
+console.log(miVariable);
+
+function varTest() {
+  var x = 31;
+  if (true) {
+    var x = 71; // ¡misma variable!
+    console.log(x); // 71
+  }
+  console.log(x); // 71
+}
+
+function letTest() {
+  let x = 31;
+  if (true) {
+    let x = 71; // variable diferente
+    console.log(x); // 71
+  }
+  console.log(x); // 31
+}
+// llamamos a las funciones
+varTest();
+letTest();
